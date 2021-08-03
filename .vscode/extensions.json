@@ -5,7 +5,7 @@
     "lokalise.i18n-ally",
     "antfu.iconify",
     "dbaeumer.vscode-eslint",
-    "voorjaar.windicss-intellisense",
+    "bradlc.vscode-tailwindcss",
     "csstools.postcss"
   ]
 }
