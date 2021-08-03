@@ -7,6 +7,7 @@ import App from './App.vue'
 
 // your custom styles here
 import './styles/main.css'
+import './styles/markdown.css'
 
 const routes = setupLayouts(generatedRoutes)
 

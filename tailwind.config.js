@@ -14,9 +14,7 @@ module.exports = {
       './src/**/*.js',
       './src/**/*.ts',
     ],
-    options: {
-      safelist: ['prose', 'prose-sm', 'm-auto', 'text-left'],
-    },
+    safelist: ['prose', 'prose-sm', 'm-auto', 'text-left'],
   },
   darkMode: 'class',
   plugins: [typography],
