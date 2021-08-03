@@ -1,27 +1,35 @@
-import { defineConfig } from 'windicss/helpers'
-import colors from 'windicss/colors'
-import typography from 'windicss/plugin/typography'
+/** @type {import("@types/tailwindcss/tailwind-config").TailwindConfig } */
+/* eslint-disable @typescript-eslint/no-var-requires */
+const colors = require('tailwindcss/colors')
+const typography = require('@tailwindcss/typography')
 
-export default defineConfig({
+module.exports = {
+  mode: 'jit',
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      './index.html',
+      './src/**/*.vue',
+      './src/**/*.md',
+      './src/**/*.js',
+      './src/**/*.ts',
+    ],
+    safelist: ['prose', 'prose-sm', 'm-auto', 'text-left'],
+  },
   darkMode: 'class',
-  // https://windicss.org/posts/v30.html#attributify-mode
-  attributify: true,
-
-  plugins: [
-    typography(),
-  ],
+  plugins: [typography],
   theme: {
     extend: {
+      colors: {
+        teal: colors.teal,
+      },
       typography: {
         DEFAULT: {
           css: {
-            maxWidth: '65ch',
             color: 'inherit',
             a: {
               'color': 'inherit',
               'opacity': 0.75,
-              'fontWeight': '500',
-              'textDecoration': 'underline',
               '&:hover': {
                 opacity: 1,
                 color: colors.teal[600],
@@ -40,4 +48,4 @@ export default defineConfig({
       },
     },
   },
-})
+}
